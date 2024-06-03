@@ -7,12 +7,12 @@ function InputBox({
     onCurrencyChange,
     currencyOptions = [],
     selectCurrency = 'usd',
-    amountDisabled = false,
+    amountDisabled = false, // just a good practice, beacause the default value of Disabled is false.
     currencyDisabled = false,
     className = "",
 }) {
 
-    const amountInputId = useId()
+    const amountInputId = useId()  // unique id for the different currencies
 
     return (
         <div className={`bg-white p-3 rounded-lg text-md flex ${className} font-semibold`}>
@@ -25,7 +25,7 @@ function InputBox({
                     className="outline-none w-full bg-transparent py-1.5"
                     type="number"
                     placeholder="Amount"
-                    disabled={amountDisabled}
+                    // disabled={amountDisabled}
                     value={amount}
                     onChange={(e) => {
                         const newValue = Number(e.target.value)

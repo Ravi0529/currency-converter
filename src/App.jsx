@@ -11,9 +11,9 @@ function App() {
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0)
 
-  const currencyInfo = useCurrencyInfo(from)
+  const currencyInfo = useCurrencyInfo(from) // calling custom-hook (default: 'USD')
 
-  const options = Object.keys(currencyInfo)
+  const options = Object.keys(currencyInfo) // getting currency names from default 'USD', ['inr','eur', etc...]
 
   const swap = () => {
     setFrom(to)
@@ -23,7 +23,7 @@ function App() {
   }
 
   const convert = () => {
-    setConvertedAmount(currencyInfo[to] * amount)
+    setConvertedAmount(currencyInfo[to] * amount) // [to] = default 'INR', so, 83.078 * 8573(rondom amount)
   }
 
   return (
